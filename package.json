@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/ts-plugin": "^1.10.6",
+    "animejs": "^4.3.6",
     "astro": "^5.18.0"
   }
 }

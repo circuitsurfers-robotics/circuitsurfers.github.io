@@ -17,5 +17,108 @@ import Header from "../components/Header.astro";
         <meta name="author" content="Circuit Surfers">
         <meta name="viewport" content="width=device-width">
         <link rel="icon" type="image/svg+xml" href="/favicon.png">
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preload" href="/assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf" as="font1" type="font/ttf" crossorigin>
+        <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf" as="font2" type="font/ttf" crossorigin>
+        <script src="/assets/js/konami_code.js" is:inline defer></script>
+        <title>{title}</title>
+        <slot name="head"/>
     </head>
+    <body>
+        <Header />
+        <slot />
+        <Footer />
+    </body>
 </html>
+
+<style is:global>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    @font-face {
+        font-family: 'Orbitron';
+        src: url("/assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf");
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url("/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+    }
+
+    :root {
+        font-size: clamp(12px, 2.5vw, 20px);
+        display: flex;
+        justify-content: center;
+
+        --rgb-bg-from: #0a1628;
+        --rgb-bg-to: #050d1a;
+        --rgb-text: #ffffff;
+        --rgb-accent-from: #38b6ff;
+        --rgb-accent-to: #1a6fd4;
+        --rgb-code-bg: #0d1f3c;
+        --rgb-text-gray: #7aafd4;
+        --rgb-text-warning: #56d4ff;
+
+        background-color: var(--rgb-bg-from);
+        font-family: 'Montserrat', system-ui;
+        color: var(--rgb-text);
+        line-height: 1.15rem;
+    }
+
+    html {
+        min-height: 100vh;
+        scroll-behavior: smooth;
+        scrollbar-gutter: stable;
+    }
+
+    section {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        overflow-x: hidden;
+        background-color: transparent;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+    background: var(--rgb-bg-from);
+    }
+
+    /* remove margin from header and footer */
+    body > header,
+    body > footer,
+    body > nav {
+        margin: 0;
+    }
+
+    /* only apply margin to page content */
+    main {
+        margin: 0rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        text-align: center;
+        margin: 0 1rem;
+        font-family: 'Orbitron', monospace, system-ui;
+    }
+    h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+        font-family: 'Orbitron', monospace, system-ui;
+    }
+    h3 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        font-family: 'Orbitron', monospace, system-ui;
+    }
+
+    /* card wrapper files to be written later once i actually understand what it means lmfao */
+
+</style>

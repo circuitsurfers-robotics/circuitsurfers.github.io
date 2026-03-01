@@ -1,0 +1,71 @@
+---
+---
+
+<nav class="navbar">
+    <div class="container">
+
+        <a href="/" class="logo">
+            <img src="/assets/img/icons/logo.png" alt="circuit-surfers-logo">
+        </a>
+
+        <!-- navbar -->
+        <ul class="nav-links">
+            <li><a href="/main/home#about">About</a></li>
+            <li><a href="/main/home#team">Team</a></li>
+            <li><a href="/main/media">Media</a></li>
+            <li><a href="/main/donate">Donate</a></li>
+        </ul>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        height: 95px;
+        padding: 15px 40px;
+        display: flex;
+        align-items: center;
+        overflow: hidden; /* add this */
+        background: linear-gradient(135deg, #0a1628, #38b6ff, #1a6fd4, #0a1628);
+        background-size: 400% 400%;
+        animation: wave 2s ease infinite;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%
+    }
+
+    .logo img {
+        width: 120px;
+        height: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 16px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #38b6ff;
+    }
+</style>

@@ -3,28 +3,34 @@ interface Props {
     href: string;
     icons: string;
     alt: string;
+    imgClass?: string;
 }
 
-const { href, icons, alt } = Astro.props;
+const { href, icons, alt, imgClass} = Astro.props;
 ---
 
 <a href={href}>
-    <img src={"/assets/img/icons" + icons } alt={alt}>
+    <img src={"/assets/img/icons/" + icons} alt={alt} class={imgClass} loading="lazy">
 </a>
 
 <style>
     img {
         aspect-ratio: 1;
-        height: clamp(1rem, 7vw, 2rem); /* subject to change */
+        height: clamp(1rem, 4vw, 2rem);
+        object-fit: contain;
+        width: clamp(1rem, 4vw, 2rem);
     }
+    
     a {
-        height: 6vw;
-        transition: ease-in-out 0.15s;
-        height: clamp(1rem, 9vw, 2rem);
+        display: block;
+        height: clamp(1rem, 4vw, 2rem);
+        transition: transform 0.15s ease-in-out; /* add property name */
     }
+
     a > img {
-        transition: ease-in-out 0.15;
+        transition: transform 0.15s ease-in-out; /* add property name and unit */
     }
+
     a:hover > img {
         transform: translateY(0.5em) scale(1.1);
     }
