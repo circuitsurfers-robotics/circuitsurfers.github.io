@@ -61,10 +61,12 @@ import Layout from "../../../layouts/Layout.astro"
     #about, #team {
         background: var(--rgb-code-bg);
         padding: 4rem 2rem 1.5rem 2rem;
-        margin-bottom: 0;
+        margin: 0 auto 0 auto;
+        max-width: 1400px;
         border: 2px solid var(--rgb-accent-from);
         border-radius: 16px;
         scroll-margin-top: 105px;
+        box-sizing: border-box;
     }
 
     #about p, #team p {
