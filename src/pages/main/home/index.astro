@@ -12,10 +12,77 @@ import Layout from "../../../layouts/Layout.astro"
         <section id="about">
             <h1>About Us</h1>
             <p>Circuit Surfers is an independent high school VEX V5 robotics team based in Fremont, California. We are a passionate group of student engineers, programmers, and designers dedicated to pushing the boundaries of competitive robotics. Competing in the VEX V5 Robotics Competition, we combine technical expertise with creative problem-solving to design, build, and program robots capable of taking on the world's best teams. Our mission is to foster a love for STEM, develop real-world engineering skills, and represent our community on the competitive stage.</p>
+            <div class="team-photo-box">
+                <!-- replace -->
+            </div>
         </section>
         <section id="team">
             <h1>Team</h1>
-            <p>Our team members for the 2026-2027 season.</p>
+            <p>Our team members for the 2026-2027 season.</p><br>
+            <div class="team-grid">
+                <div class="member">
+                    <div class="photo-circle">
+                        <!-- sriman photo source -->
+                    </div>
+                    <h3>SRIMAN SREEPATHI</h3>
+                    <li>Programming Lead</li>
+                    <li>Hardware Team</li>
+                    <li>Notebook Lead</li>
+                </div>
+                <div class="member">
+                    <div class="photo-circle">
+                        <!-- pranav photo source -->
+                    </div>
+                    <h3>PRANAV PYDI</h3>
+                    <li>Hardware & CAD Lead</li>
+                    <li>Programming Team</li>
+                    <li>Notebook Assist</li>
+                </div>
+                <div class="member">
+                    <div class="photo-circle">
+                        <!-- twanshu photo source -->
+                    </div>
+                    <h3>TWANSHU KHATRI</h3>
+                    <li>Driver</li>
+                    <li>Hardware Team</li>
+                    <li>Notebook Assist</li>
+                </div>
+                <div class="member">
+                    <div class="photo-circle">
+                        <!-- justin photo source -->
+                    </div>
+                    <h3>JUSTIN GAO</h3>
+                    <li>Hardware Team</li>
+                    <li>Notebook Team</li>
+                </div>
+                <div class="member">
+                    <div class="photo-circle">
+                        <!-- abhi photo source -->
+                    </div>
+                    <h3>ABHI GHOSH</h3>
+                    <li>Hardware Team</li>
+                    <li>Notebook Assist</li>
+                    <li>Media</li>
+                </div>
+                <div class="member">
+                    <div class="photo-circle">
+                        <!-- dev photo source -->
+                    </div>
+                    <h3>DEV BHATT</h3>
+                    <li>Programming Team</li>
+                    <li>Notebook Assist</li>
+                    <li>Hardware Team</li>
+                </div>
+                <div class="member last">
+                    <div class="photo-circle">
+                        <!-- matthew photo source -->
+                    </div>
+                    <h3>MATTHEW HO</h3>
+                    <li>Hardware Team</li>
+                    <li>Programming Team</li>
+                    <li>Notebook Assist</li>
+                </div>
+            </div>
         </section>
     </main>
 </Layout>
@@ -74,6 +141,71 @@ import Layout from "../../../layouts/Layout.astro"
         text-align: left;
         line-height: 2;
         max-width: 600px;
+    }
+
+    #about p {
+        padding-left: 2.5rem;
+        font-size: 20px;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+        justify-items: center;
+    }
+
+    .team-grid .last {
+        grid-column: 2;
+    }
+
+    .member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .photo-circle {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: 3px solid var(--rgb-accent-from);
+        overflow: hidden;
+        background: var(--rgb-bg-from);
+    }
+
+    .photo-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .member h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .member li {
+        margin: 0;
+        font-size: 1.1rem;
+        color: white;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+        .team-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .team-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     .accent {

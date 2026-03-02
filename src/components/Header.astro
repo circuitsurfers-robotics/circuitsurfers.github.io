@@ -4,9 +4,27 @@
 <nav class="navbar">
     <div class="container">
 
-        <a href={`${import.meta.env.BASE_URL}`} class="logo">
-            <img src={`${import.meta.env.BASE_URL}assets/img/icons/logo.png`} alt="circuit-surfers-logo">
-        </a>
+        <div class="logo-socials">
+            <a href={`${import.meta.env.BASE_URL}`} class="logo">
+                <img src={`${import.meta.env.BASE_URL}assets/img/icons/logo.png`} alt="circuit-surfers-logo">
+            </a>
+
+            <!-- socials -->
+            <div class="socials">
+                <a href="https://instagram.com/circuitsurfersrobotics" target="_blank" aria-label="Instagram">
+                    <img src={`${import.meta.env.BASE_URL}assets/img/icons/instagram.png`} alt="Instagram" />
+                </a>
+                <a href="https://youtube.com/@circuitsurfersrobotics" target="_blank" aria-label="YouTube">
+                    <img src={`${import.meta.env.BASE_URL}assets/img/icons/youtube.png`} alt="YouTube" />
+                </a>
+                <a href="https://github.com/circuitsurfers-robotics" target="_blank" aria-label="GitHub">
+                    <img src={`${import.meta.env.BASE_URL}assets/img/icons/github.svg`} alt="GitHub" />
+                </a>
+                <a href="https://robotevents.com/teams/V5RC/59200A" target="_blank" aria-label="VEX">
+                    <img src={`${import.meta.env.BASE_URL}assets/img/icons/vex.png`} alt="VEX"/>
+                </a>
+            </div>
+        </div>
 
         <!-- navbar -->
         <ul class="nav-links">
@@ -24,7 +42,7 @@
         padding: 15px 40px;
         display: flex;
         align-items: center;
-        overflow: hidden;
+        overflow: visible;
         background: linear-gradient(135deg, #0a1628, #38b6ff, #1a6fd4, #0a1628);
         background-size: 400% 400%;
         position: fixed;
@@ -41,9 +59,56 @@
         width: 100%;
     }
 
+    .logo-socials {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+    }
+
     .logo img {
         width: 120px;
         height: auto;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .socials a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .socials a:hover {
+        transform: scale(1.15);
+        opacity: 0.85;
+        z-index: 10;
+        position: relative;
+    }
+
+    .socials img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+    }
+
+    .socials a[aria-label="VEX"] {
+        width: 48px;
+        height: 48px;
+        overflow: hidden;
+    }
+
+    .socials a[aria-label="VEX"] img {
+        width: 55px;
+        height: 55px;
+        object-fit: contain;
+        margin-left: 1px;
     }
 
     .nav-links {

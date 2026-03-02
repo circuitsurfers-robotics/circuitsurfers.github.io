@@ -2,11 +2,16 @@
 import Layout from "../../../layouts/Layout.astro";
 ---
 
-<Layout title="Donate">
+<Layout title="Circuit Surfers - Donate">
     <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-donate">DONATE</h1>
+            </div>
+        </section>
         <section id="donate">
-            <h1>Support Our Team ❤️</h1>
-            <p class="subtitle">Circuit Surfers is a student-run team operating independently without school funding. Every donation directly supports our team by covering competition registration fees, robot parts, and travel expenses. Your contribution helps us continue competing, learning, and representing our team on the robotics stage. No amount is too small — we appreciate every bit of support from our community!</p>
+            <h1>Support Our Team ❤️</h1><br>
+            <p class="subtitle">Circuit Surfers is a student-run team operating independently without school funding. Every donation directly supports our team by covering competition registration fees, robot parts, and travel expenses. Your contribution helps us continue competing, learning, and representing our team on the robotics stage. No amount is too small — we appreciate every bit of support from our community!</p><br>
 
             <h2>How Your Money is Used 🤔</h2>
             <p class="subtitle">Here is how your money will be used to keep our team competing and growing:</p>
@@ -38,7 +43,12 @@ import Layout from "../../../layouts/Layout.astro";
                 <h2>Make a Donation 🏦</h2>
                 <p class="subtitle">Your donation helps Circuit Surfers continue competing and inspiring the next generation of engineers — every contribution counts!</p>
                 <div class="btn-wrapper">
-                    <a class="donate-btn">Donate via Stripe</a>
+                    <a class="donate-btn">
+                        <div class="btn-logo">
+                            <img src="/assets/img/icons/stripe.png" alt="stripe-logo" />
+                        </div>
+                        Donate via Stripe
+                    </a>
                 </div>
             </div>
         </section>
@@ -47,22 +57,59 @@ import Layout from "../../../layouts/Layout.astro";
 
 <style>
     main {
-        padding-top: 95px;
+        padding-top: 0px;
         margin: 0;
+    }
+
+    .hero {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--rgb-bg-from);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box;
+        padding-top: 95px;
+    }
+
+    .hero-donate {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        width: 100%;
+        font-size: clamp(2rem, 6vw, 5rem);
+        white-space: nowrap;
+        font-weight: 900;
+        color: white;
+        text-transform: uppercase;
+        margin: 0;
+        letter-spacing: 2px;
     }
 
     #donate {
         padding: 4rem 2rem;
-        max-width: 1100px;
+        max-width: 1600px;
         margin: 2rem auto;
         text-align: center;
     }
 
+    #donate h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    #donate h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+
     .subtitle {
-        color: var(--rgb-text-gray);
+        color: white;
         max-width: 900px;
         margin: 1rem auto 3rem auto;
         line-height: 1.8;
+        font-size: 1.2rem;
     }
 
     h2 {
@@ -82,13 +129,13 @@ import Layout from "../../../layouts/Layout.astro";
         border: 1px solid var(--rgb-accent-from);
         border-radius: 16px;
         padding: 2rem;
-        width: 220px;
+        width: 280px;
         text-align: center;
         transition: transform 0.3s ease;
     }
 
     .card:hover {
-        transform: translateY(-5px); /* fixed typo: trasnlateY */
+        transform: translateY(-5px);
     }
 
     .icon {
@@ -109,11 +156,14 @@ import Layout from "../../../layouts/Layout.astro";
     }
 
     .page {
-        margin-top: 4rem;
+        margin: 4rem auto 0 auto;
         border: 2px solid var(--rgb-accent-from);
         background: var(--rgb-code-bg);
         border-radius: 16px;
+        width: 100%;
+        max-width: 1600px;
         padding: 2rem;
+        box-sizing: border-box;
     }
 
     .btn-wrapper {
@@ -126,18 +176,36 @@ import Layout from "../../../layouts/Layout.astro";
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 0.75rem;
+        gap: 1rem;
         background: linear-gradient(135deg, var(--rgb-accent-from), var(--rgb-accent-to));
         color: white;
         text-decoration: none;
         font-weight: 700;
-        font-size: 1.2rem;
-        padding: 1.2rem 4rem;
+        font-size: 1.4rem;
+        padding: 1.5rem 5rem;
         border-radius: 12px;
         border: none;
         box-shadow: 0 4px 15px rgba(56, 182, 255, 0.4);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
-        width: 300px;
+        width: 600px;
+    }
+
+    .btn-logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .btn-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .donate-btn:hover {
