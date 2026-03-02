@@ -1,7 +1,12 @@
 let codes = [
     {
-        sequence: ["r","o","b","o","t","e","v","e","n","t","s"],
-        href: "https://robotevents.com/teams/V5RC/59200A",
+        sequence: ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"],
+        href: "https://www.youtube.com/watch?v=U1dirHGODpM",
+        index: 0,
+    },
+    {
+        sequence: ["p", "p", "a", "p"],
+        href: "https://www.youtube.com/watch?v=Ct6BUPvE2sM",
         index: 0,
     }
 ]
